@@ -11,16 +11,18 @@ int main()
     
     if (b*b == 4*a*c)
     {
-    	printf("x₁ = x₂ = %g",d);
+    	printf("x₁ = x₂ = %.4g",d);//只有一个根
     }
     else if (b*b > 4*a*c)
     {
-    	printf("x₁ = %g\tx₂ = %g",d+e,d-e);
+    	printf("x₁ = %.4g\tx₂ = %.4g",d+e,d-e);
+    	//有两个实根
     }
     else
     {
     	printf("x₁ = %g+%gi\t"
     	       "x₂ = %g-%gi",d,f,d,f);
+    	       //无实根
     }
     return 0;
 }

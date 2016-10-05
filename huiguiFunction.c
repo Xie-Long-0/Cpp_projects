@@ -26,7 +26,7 @@ void Input( void )
 		while ( !scanf("%lf %lf", &x[i], &y[i]) )
 		{
 			getchar();
-			printf("\nError ! Please input two right numbers :\n");
+			printf("\nERROR！请输入两个数:\n");
 		}
 		printf("\033[34m  x[%d] = %g , y[%d] = %g .\033[0m\n", i, x[i], i, y[i]);
 	}
@@ -48,7 +48,7 @@ void Compute( void )
 
 void Output( void )
 {
-	printf("\n  Done !\n\n");
+	printf("\n  Done！\n\n");
 	printf("\033[31m\033[46mX=%.4g\nY=%.4g\ny=%.4gx%+.4g\nr=%.4g\n\033[0m", Xo, Yo, b, a, r);
 }
 

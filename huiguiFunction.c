@@ -1,18 +1,18 @@
 #include <stdio.h>
 #include <math.h>
 
-int i = 0, N = 0;
-float a = 0, b = 0, X = 0, Y = 0, n, r;
-float Xo, Yo, XX = 0, XY = 0, YY = 0;
-float x[32] = { 0 }, y[32] = { 0 };
+int i = 0, N = 0, t;
+double a = 0, b = 0, X = 0, Y = 0, n, r;
+double Xo, Yo, XX = 0, XY = 0, YY = 0;
+double x[32] = { 0 }, y[32] = { 0 };
 
 void Initnum( void )
 {
-	printf("How many groups of numbers do you want to input ?");
-	while ( !scanf("%d", &N) || N <= 2)
+	printf("你将输入_组数据\b\b\b\b\b\b\b");
+	while (!scanf("%d", &N) || N <= 2)
 	{
-		printf("\nError ! Please input a right number (N > 2): ");
 		getchar();
+		printf("\nERROR！请输入一个大于2的正整数: ");
 	}
 	printf("\n N = %d", N);
 	n = N;
@@ -22,13 +22,13 @@ void Input( void )
 {
 	for ( i = 1; i <= N; i++ )
 	{
-		printf("\nPlease input the %d munbers :\n", i);
-		while ( !scanf("%f %f", &x[i], &y[i]) )
+		printf("\n请输入第%d组数据(x,y):\n", i);
+		while ( !scanf("%lf %lf", &x[i], &y[i]) )
 		{
-			printf("\nError ! Please input two right numbers :\n");
 			getchar();
+			printf("\nError ! Please input two right numbers :\n");
 		}
-		printf("\033[34m  x[%d] = %.3f , y[%d] = %.3f .\033[0m\n", i, x[i], i, y[i]);
+		printf("\033[34m  x[%d] = %g , y[%d] = %g .\033[0m\n", i, x[i], i, y[i]);
 	}
 }
 
@@ -49,13 +49,12 @@ void Compute( void )
 void Output( void )
 {
 	printf("\n  Done !\n\n");
-	printf("\033[31m\033[46mX = %.3f      Y = %.3f\ny = %.3fx + %.3f\nr = %.3f\n\033[0m", Xo, Yo, b, a, r);
+	printf("\033[31m\033[46mX=%.4g\nY=%.4g\ny=%.4gx%+.4g\nr=%.4g\n\033[0m", Xo, Yo, b, a, r);
 }
 
 int main( void )
 {
 	char c;
-	int t;
 	do
 	{
 		Initnum();

@@ -10,7 +10,7 @@ void suan( void )
 {
 	int x, y;
 	printf("输入两个正整数，求最大公约数：");
-	while (!scanf("%d %d", &x, &y) || x <= 0 || y <= 0)
+	while (!scanf("%d %d", &x, &y) || x<=0 || y<=0)
 	{
 		getchar();
 		printf("\nERROR！请输入两个正整数：");
@@ -28,6 +28,6 @@ int main()
 		printf("\nInput Y to continue, input other Key to end...\n");
 	}
 	while (scanf("%c", &c) && c == 'Y');
-	printf(" --END--\n");
+	printf(" --END--");
 	return 0;
 }

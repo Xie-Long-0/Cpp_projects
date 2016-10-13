@@ -11,7 +11,6 @@ void su(int x)
 			break;
 		}
 		printf("%d是一个素数。\n", x);
-		break;
 	}
 }
 

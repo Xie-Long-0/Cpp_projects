@@ -1,4 +1,4 @@
-/*  水仙花数  */
+/*  1000以内的水仙花数  */
 #include <stdio.h>
 int main()
 {

@@ -1,21 +1,22 @@
 /*  辗转相除  */
 #include <stdio.h>
 
-int chu(int a, int b)
+long int chu(long int a, long int b)
 {
 	return a%b == 0?b:chu(b, a%b);
 }
 
-void suan( void )
+void suan()
 {
-	int x, y;
-	printf("输入两个正整数，求最大公约数：");
-	while (!scanf("%d %d", &x, &y) || x<=0 || y<=0)
+	long int x, y;
+	printf("输入两个正整数：");
+	while (!scanf("%ld %ld", &x, &y) || x<=0 || y<=0)
 	{
 		getchar();
-		printf("\nERROR！请输入两个正整数：");
+		printf("\n错误！请输入两个正整数：");
 	}
-	printf("最大公约数为 %d\n", chu(x, y));
+	printf("最大公约数为 %ld\n", chu(x, y));
+	printf("最小公倍数为 %ld\n", x*y/chu(x, y));
 }
 
 int main()

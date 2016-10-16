@@ -1,11 +1,12 @@
 /*    100以内的素数    */
 #include <stdio.h>
+//#include <conio.h>
 #define N 492859377
 
 int main()
 {
-	long long int m, n, s = 0;
-	printf("%lld以内的素数：\n", N);
+	unsigned long int m, n, s = 0;
+	printf("%lu以内的素数：\n", N);
 	for (m = 2; m <= N; m++)
 	{
 		for (n = 2; n <= m; n++)
@@ -17,7 +18,8 @@ int main()
 		{
 			//printf("%2lld\t ", m);
 			s++;
-			printf("%lld\n", s);
+			//clrscr();
+			printf("%lu\n", s);
 		}
 	}
 	return 0;

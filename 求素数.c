@@ -1,11 +1,11 @@
 /*    100以内的素数    */
 #include <stdio.h>
-#define N 100
+#define N 492859377
 
 int main()
 {
-	int m, n;
-	printf("%d以内的素数：\n", N);
+	long long int m, n, s = 0;
+	printf("%lld以内的素数：\n", N);
 	for (m = 2; m <= N; m++)
 	{
 		for (n = 2; n <= m; n++)
@@ -14,7 +14,11 @@ int main()
 			break;
 		}
 		if (m == n)
-		printf("%2d\t ", m);
+		{
+			//printf("%2lld\t ", m);
+			s++;
+			printf("%lld\n", s);
+		}
 	}
 	return 0;
 }

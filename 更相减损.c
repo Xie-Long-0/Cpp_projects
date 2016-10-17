@@ -1,9 +1,10 @@
 /*   更相减损   */
 #include <stdio.h>
 
-int sun(int x, int y)
+char ch[65536];
+long long int sun(long long int x, long long int y)
 {
-	int z;
+	long long int z;
 	if (x <= y)
 	{
 		z = y;
@@ -13,16 +14,16 @@ int sun(int x, int y)
 	return x-y == 0?y:sun(y, x-y);
 }
 
-void suan( void )
+void suan()
 {
-	int a, b;
+	long long int a, b;
 	printf("输入两个正整数，求最大公约数：");
-	while (!scanf("%d %d", &a, &b) || a<=0 || b<=0)
+	while (!scanf("%lld %lld", &a, &b) || a<=0 || b<=0)
 	{
-		getchar();
+		gets(ch);
 		printf("\nERROR！请输入两个正整数：");
 	}
-	printf("最大公约数为 %d\n",sun(a, b));
+	printf("最大公约数为 %lld\n",sun(a, b));
 }
 
 int main()
@@ -31,7 +32,7 @@ int main()
 	do
 	{
 		suan();
-		getchar();
+		gets(ch);
 		printf("\nInput Y to continue, input other Key to end...\n");
 	}
 	while (scanf("%c", &c) && c == 'Y');

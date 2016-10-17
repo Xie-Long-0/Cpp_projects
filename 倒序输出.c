@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <string.h>
 
-void fun( void )
+void fun()
 {
 	char ch[128] = "\0", zh[128] = "\0";
 	int i, n;

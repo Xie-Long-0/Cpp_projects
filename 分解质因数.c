@@ -2,11 +2,12 @@
 #include <stdio.h>
 int main()
 {
+	char ch[2048];
 	printf("请输入一个正整数：");
 	long long int i, n;
 	while ( !scanf("%lld", &n) || n<=0 )
 	{
-		getchar();
+		gets(ch);
 		printf("输入错误！请输入一个正整数：");
 	}
 	if ( n==1 )

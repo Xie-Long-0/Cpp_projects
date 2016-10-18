@@ -2,8 +2,8 @@
 #include <stdio.h>
 int main()
 {
-	int s, b=5, c=7, i=1;
-	scanf("%d", &s);
+	long int s, b=5, c=7, i=1;
+	scanf("%ld", &s);
 	if (s%3 == 0)
 	{
 		printf("3");
@@ -11,12 +11,12 @@ int main()
 	}
 	if (s%5 == 0)
 	{
-		printf("%*d", i, b);
+		printf("%*ld", i, b);
 		if (i == 1)
 		i++;
 	}
 	if (s%7 == 0)
-	printf("%*d", i++, c);
+	printf("%*ld", i++, c);
 	if (i == 1)
 	printf("n");
 	return 0;

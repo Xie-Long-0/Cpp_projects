@@ -2,6 +2,7 @@
 #include <stdio.h>
 
 char ch[65536];
+
 long long int sun(long long int x, long long int y)
 {
 	long long int z;

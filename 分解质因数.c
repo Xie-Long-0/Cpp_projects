@@ -1,4 +1,3 @@
-/* UTF-8编码 */
 #include <stdio.h>
 int main()
 {

@@ -4,35 +4,35 @@
 int i = 0, N = 0, t;
 double a = 0, b = 0, X = 0, Y = 0, n, r;
 double Xo, Yo, XX = 0, XY = 0, YY = 0;
-double x[32] = { 0 }, y[32] = { 0 };
+double x[32] = {0}, y[32] = {0};
 
-void Initnum( void )
+void Initnum()
 {
-	printf("你将输入_组数据\b\b\b\b\b\b\b");
+	printf("你将输入__组数据\b\b\b\b\b\b\b\b");
 	while (!scanf("%d", &N) || N <= 2)
 	{
 		getchar();
-		printf("\nERROR！请输入一个大于2的正整数: ");
+		printf("错误！请输入一个大于2的正整数：");
 	}
 	printf("\n N = %d", N);
 	n = N;
 }
 
-void Input( void )
+void Input()
 {
 	for ( i = 1; i <= N; i++ )
 	{
-		printf("\n请输入第%d组数据(x,y):\n", i);
+		printf("\n请输入第%d组数据(x,y)：\n", i);
 		while ( !scanf("%lf %lf", &x[i], &y[i]) )
 		{
 			getchar();
-			printf("\nERROR！请输入两个数:\n");
+			printf("错误！请输入两个数：\n");
 		}
 		printf("\033[34m  x[%d] = %g , y[%d] = %g .\033[0m\n", i, x[i], i, y[i]);
 	}
 }
 
-void Compute( void )
+void Compute()
 {
 	for ( i = 1; i <= N; i++)
 	{
@@ -46,13 +46,13 @@ void Compute( void )
 	r = (XY - n*Xo*Yo)/sqrt((XX - n*Xo*Xo)*(YY - n*Yo*Yo));
 }
 
-void Output( void )
+void Output()
 {
-	printf("\n  Done！\n\n");
+	printf("\n  完成！\n\n");
 	printf("\033[31m\033[46mX=%.4g\nY=%.4g\ny=%.4gx%+.4g\nr=%.4g\n\033[0m", Xo, Yo, b, a, r);
 }
 
-int main( void )
+int main()
 {
 	char c;
 	do
@@ -67,6 +67,6 @@ int main( void )
 		printf("\n__________________________________\n");
 	}
 	while ( t && c == 'Y');
-	printf("  --END--");
+		printf("  --END--");
 	return 0;
 }

@@ -2,28 +2,30 @@
 #include <math.h>
 int main( void )
 {
-	double a, b, c, d, e, f;
+	const double EPS=1e-10;
+	double a, b, c, delta, e, f, point;
 	printf("Input a b c :");
 	
 	while (scanf("%lf%lf%lf", &a, &b, &c) != EOF)
 	{
-		d = -b / (2 * a);
-		f = sqrt(4 * a * c - b * b) / (2 * a);
-		e = sqrt(b * b - 4 * a * c) / (2 * a);
-	
-		if (b * b == 4 * a * c)
+		delta = b*b - 4*a*c;
+		point = -b / (2*a);
+		f = sqrt(-delta) / (2*a);
+		e = sqrt(delta) / (2*a);
+		printf("∆ = %.4g\n", delta);
+		if (fabs(delta) <= EPS)
 		{
-			printf("x₁ = x₂ = %.4g\n", d);
+			printf("X₁ = X₂ = %.4g\n", point);
 			// Only a root
 		}
-		else if (b * b > 4 * a * c)
+		else if (delta > EPS)
 		{
-			printf("x₁ = %.4g\tx₂ = %.4g\n", d + e, d - e);
+			printf("X₁ = %.4g\nX₂ = %.4g\n", point + e, point - e);
 			// Two roots
 		}
 		else
 		{
-			printf("x₁ = %.4g+%.4gi\t" "x₂ = %.4g-%.4gi\n", d, f, d, f);
+			printf("X₁ = %.4g+%.4gi\nX₂ = %.4g-%.4gi\n", point, f, point, f);
 			// No root
 		}
 		printf("\nInput a b c: ");

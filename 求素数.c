@@ -1,7 +1,7 @@
 /*    100以内的素数    */
 #include <stdio.h>
 //#include <conio.h>
-#define N 492859377
+#define N 4928
 
 int main()
 {
@@ -16,7 +16,7 @@ int main()
 		}
 		if (m == n)
 		{
-			//printf("%2lld\t ", m);
+			printf("%2lld\t ", m);
 			s++;
 			//clrscr();
 			printf("%lu\n", s);

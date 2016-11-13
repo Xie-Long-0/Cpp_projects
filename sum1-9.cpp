@@ -14,11 +14,14 @@ int Fn(int x)
 
 int main()
 {
-	double sum = 0;
+	double sum = 1;
 	cout<<"a = 1";
 	for (int t = 2; t <= 9; t++)
 	{
-		sum += (double)1/Fn(t);
+		sum += pow(-1, t+1)*1/Fn(t);
+		if (t%2 == 0)
+		cout<<" - 1/"<<Fn(t);
+		else
 		cout<<" + 1/"<<Fn(t);
 	}
 	cout<<"\n= "<<sum<<endl;

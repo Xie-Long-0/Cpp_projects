@@ -1,6 +1,5 @@
-#include <iostream>
+#include <stdio.h>
 #define N 1000
-using namespace std;
 int main()
 {
 	int i, n, s = 0, a[1000], t = 0;
@@ -16,10 +15,10 @@ int main()
 		}
 		if (s == n)
 		{
-			cout<<n<<"→1";
+			printf("%d = 1", n);
 			for (i = 1; i < t; i++)
-			cout<<", "<<a[i];
-			cout<<endl;
+				printf("+%d", a[i]);
+			printf("\n");
 		}
 		t = 0;
 		s = 0;

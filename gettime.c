@@ -17,7 +17,7 @@ day = timeinfo->tm_mday;
 hour = timeinfo->tm_hour;
 min = timeinfo->tm_min;
 sec = timeinfo->tm_sec;
-printf("%d年 %d月 %d日 %d时 %d分 %d秒\n", year, month, day, hour, min, sec);
+printf("%d年 %02d月 %02d日 %02d时 %02d分 %02d秒\n", year, month, day, hour, min, sec);
 usleep(500000);
 clrscr();
 }

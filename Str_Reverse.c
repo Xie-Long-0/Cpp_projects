@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-void Reverse(char *s)
+void Reverse(char s[])
 {
 	int len = strlen(s);
 	char temp;

@@ -1,34 +1,35 @@
-/*  辗转相除  */
+/*  辗转相除法  */
+
 #include <stdio.h>
 
-long int chu(long int a, long int b)
+long long chu(long long a, long long b)
 {
-	return a%b == 0?b:chu(b, a%b);
+	return (a%b==0? b:chu(b,a%b));
 }
 
-void suan()
+void Calc()
 {
-	long int x, y;
-	printf("输入两个正整数：");
-	while (!scanf("%ld %ld", &x, &y) || x<=0 || y<=0)
+	long long a, b;
+	printf("Input two positive interger number:\n");
+	while (!scanf("%lld %lld", &a, &b) || a<=0 || b<=0)
 	{
 		getchar();
-		printf("\n错误！请输入两个正整数：");
+		printf("Input right number!\n");
 	}
-	printf("最大公约数为 %ld\n", chu(x, y));
-	printf("最小公倍数为 %ld\n", x*y/chu(x, y));
+	long long s=chu(a,b);
+	printf("The Greatest common divisor is %lld\n", s);
+	printf("The Least common multiple is %lld\n", a*b/s);
 }
 
 int main()
 {
 	char c;
-	do
-	{
-		suan();
+	do {
+		Calc();
 		getchar();
 		printf("\nInput Y to continue, input other Key to end...\n");
 	}
-	while (scanf("%c", &c) && c == 'Y');
-	printf(" --END--");
+	while (scanf("%c", &c) && (c=='Y'||c=='y'));
+	printf(" --END--\n");
 	return 0;
 }

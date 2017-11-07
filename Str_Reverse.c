@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <stdlib.h>
 #include <string.h>
 
 void Reverse(char s[])
@@ -20,6 +19,6 @@ int main()
 	printf("Input a string:\n");
 	scanf("%s", s);
 	Reverse(s);
-	printf("%s\n", s);
+	printf("Reversion:\n%s\n", s);
 	return 0;
 }

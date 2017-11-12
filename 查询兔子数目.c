@@ -1,7 +1,7 @@
 #include <stdio.h>
 int main()
 {
-	unsigned long long int a[30000]={0, 1};
+	unsigned long long int a[3000]={0, 1};
 	int n, i;
 	char ch[2048];
 	printf("请输入要查询多少个月的情况（小于等于80）：");

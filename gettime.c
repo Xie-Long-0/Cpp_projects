@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <time.h>
-#include <conio.h>
+//#include <conio.h>
+#include <stdlib.h>
 
 int main() {
   time_t nowtime;
@@ -17,8 +18,10 @@ int main() {
     sec = timeinfo->tm_sec;
     printf("%d年 %02d月 %02d日 %02d时 %02d分 %02d秒\n", year, month, day,
            hour, min, sec);
-    usleep(300000);
-    clrscr();
+    //usleep(300000);
+    //clrscr();
+    system("sleep 0.1");
+    system("clear");
   }
   return 0;
 }

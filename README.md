@@ -1,2 +1,2 @@
-# C4droid
-my practices
+# Basic C practice
+Usually using gcc-commandline.

@@ -1,9 +1,9 @@
 #ifndef FIBO_H_
 #define FIBO_H_
 
-#include <iostream>
-
-extern int MAXSIZE;
+#include <stdio.h>
+#include <math.h>
+#include <stdlib.h>
 
 void Fibonacci(int f[]);
 

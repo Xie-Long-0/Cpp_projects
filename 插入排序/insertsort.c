@@ -1,6 +1,6 @@
 #include "insertsort.h"
 
-void direct_insert_sort(int a[], const unsigned int n, const short mode)
+void direct_insert_sort(int a[], const int n, const short mode)
 {
     int i, k;
     int temp;
@@ -22,6 +22,54 @@ void direct_insert_sort(int a[], const unsigned int n, const short mode)
             for (k = i; (k > 0) && (a[k-1] < temp); k--)
                 a[k] = a[k-1];
             a[k] = temp;
+        }
+    }
+}
+
+/*
+ * Binary Search
+ * param:
+ * [i] a[] is the target array to search;
+ * [i] n is the length of the array a[];
+ * [i] data is the target element to search;
+ * [i] mode is used to select the searching method of the array,
+ *     0 is from small to large, the other numbers are the opposite.
+ * return: index of data in the a[].
+ */
+int binary_search(int a[], const int n, const int data, const short mode)
+{
+    int begin = 0;
+    int end = n;
+    int middle = -1;
+
+    while (begin <= end) {
+        middle = (begin + end) / 2;
+        if (a[middle] > data) {
+            if (0 == mode)
+                end = middle - 1;
+            else
+                begin = middle + 1;
+        } else {
+            if (0 == mode)
+                begin = middle + 1;
+            else
+                end = middle - 1;
+        }
+    }
+
+    return begin;
+}
+
+void binary_insert_sort(int a[], const int n, const short mode)
+{
+    for (int i = 1; i < n; i++) {
+        int index = binary_search(a, i - 1, a[i], mode);
+
+        if (index != i) {
+            int temp = a[i];
+            for (int k = i; k > index; k--)
+                a[k] = a[k - 1];
+            a[index] = temp;
         }
     }
 }

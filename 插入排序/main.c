@@ -10,8 +10,8 @@ int main(void)
     int u[] = {10, 5, 6, 2, 3, 5, 2};
     int nu = LENGTH(u);
 
-    direct_insert_sort(s, ns, 1);
-    direct_insert_sort(u, nu, 0);
+    binary_insert_sort(s, ns, 0);
+    binary_insert_sort(u, nu, 1);
 
     for (int i = 0; i < ns; ++i) {
         printf("%d ", s[i]);

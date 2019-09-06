@@ -5,9 +5,9 @@
 
 using namespace std;
 
-/* Ê®½øÖÆ×ª¶ş½øÖÆ */
+/* åè¿›åˆ¶è½¬äºŒè¿›åˆ¶ */
 
-/* ÕûÊı²¿·Ö */
+/* æ•´æ•°éƒ¨åˆ† */
 void db_integer(long n)
 {
 	if (n > 0)
@@ -16,7 +16,7 @@ void db_integer(long n)
 		cout << n%2;
 	}
 }
-/* Ğ¡Êı²¿·Ö */
+/* å°æ•°éƒ¨åˆ† */
 void db_decimal(double m)
 {
 	if (m > ZERO)
@@ -30,7 +30,7 @@ void db_decimal(double m)
 void dec_to_bin(double num)
 {
 	db_integer((long)num);
-	if (num - (long)num > ZERO)			//ÅĞ¶ÏÊÇ·ñÓĞĞ¡Êı
+	if (num - (long)num > ZERO)			//åˆ¤æ–­æ˜¯å¦æœ‰å°æ•°
 	{
 		putchar('.');
 		db_decimal(num - (long)num);
@@ -38,18 +38,18 @@ void dec_to_bin(double num)
 	cout << endl;
 }
 
-/* ¶ş½øÖÆ×ªÊ®½øÖÆ */
+/* äºŒè¿›åˆ¶è½¬åè¿›åˆ¶ */
 void bin_to_dec()
 {
-	double integer = 0.0;	//ÕûÊı²¿·Ö
-	double decimal = 1.0;		//Ğ¡Êı²¿·Ö
-	int signal = 1;			//Õı¸ººÅ
-	int flag = 0;				//×´Ì¬±êÖ¾
+	double integer = 0.0;	//æ•´æ•°éƒ¨åˆ†
+	double decimal = 1.0;		//å°æ•°éƒ¨åˆ†
+	int signal = 1;			//æ­£è´Ÿå·
+	int flag = 0;				//çŠ¶æ€æ ‡å¿—
 	while (flag != 3)
 	{
 		switch (flag)
 		{
-		case 0:				/* flag==0£ºµÚÒ»¸ö×Ö·û£¬¿ÉÒÔÊÇ¸ººÅ»òĞ¡Êıµã£¬Ò²¿ÉÒÔÊÇ0»ò1  */
+		case 0:				/* flag==0ï¼šç¬¬ä¸€ä¸ªå­—ç¬¦ï¼Œå¯ä»¥æ˜¯è´Ÿå·æˆ–å°æ•°ç‚¹ï¼Œä¹Ÿå¯ä»¥æ˜¯0æˆ–1  */
 			switch (getchar())
 			{
 			case '1':
@@ -67,10 +67,10 @@ void bin_to_dec()
 				flag = 2;
 				break;
 			default:
-				flag = 3;		/* Óö·Ç·¨×Ö·û£¨°üÀ¨»Ø³µ£©½áÊøÊäÈë	 */
+				flag = 3;		/* é‡éæ³•å­—ç¬¦ï¼ˆåŒ…æ‹¬å›è½¦ï¼‰ç»“æŸè¾“å…¥	 */
 			}
 			break;
-		case 1:				/* flag==1£ºÕûÊı²¿·Ö£¬¿ÉÒÔÊÇ0»ò1£¬Ò²¿ÉÒÔÊÇĞ¡Êıµã	 */
+		case 1:				/* flag==1ï¼šæ•´æ•°éƒ¨åˆ†ï¼Œå¯ä»¥æ˜¯0æˆ–1ï¼Œä¹Ÿå¯ä»¥æ˜¯å°æ•°ç‚¹	 */
 			switch (getchar())
 			{
 			case '1':
@@ -83,10 +83,10 @@ void bin_to_dec()
 				flag = 2;
 				break;
 			default:
-				flag = 3;		/* Óö·Ç·¨×Ö·û£¨°üÀ¨»Ø³µ£©½áÊøÊäÈë */
+				flag = 3;		/* é‡éæ³•å­—ç¬¦ï¼ˆåŒ…æ‹¬å›è½¦ï¼‰ç»“æŸè¾“å…¥ */
 			}
 			break;
-		case 2:				/* flag==2£ºĞ¡Êı²¿·Ö£¬¿ÉÒÔÊÇ0»ò1 */
+		case 2:				/* flag==2ï¼šå°æ•°éƒ¨åˆ†ï¼Œå¯ä»¥æ˜¯0æˆ–1 */
 			decimal = decimal / 2;
 			switch (getchar())
 			{
@@ -96,7 +96,7 @@ void bin_to_dec()
 			case '0':
 				break;
 			default:
-				flag = 3;		/* Óö·Ç·¨×Ö·û£¨°üÀ¨»Ø³µ£©½áÊøÊäÈë	 */
+				flag = 3;		/* é‡éæ³•å­—ç¬¦ï¼ˆåŒ…æ‹¬å›è½¦ï¼‰ç»“æŸè¾“å…¥	 */
 			}
 		}
 	}
@@ -107,21 +107,21 @@ int main()
 {
 	while (1)
 	{
-		cout << "1. Ê®½øÖÆ -> ¶ş½øÖÆ\n2. ¶ş½øÖÆ -> Ê®½øÖÆ\n0. ÍË³ö\nÇëÑ¡Ôñ£º" << endl;
+		cout << "1. åè¿›åˆ¶ -> äºŒè¿›åˆ¶\n2. äºŒè¿›åˆ¶ -> åè¿›åˆ¶\n0. é€€å‡º\nè¯·é€‰æ‹©ï¼š" << endl;
 		int s;
 		cin >> s;
 		switch (s)
 		{
 		case 1:
 			double num;
-			cout << "ÇëÊäÈëÒ»¸öÊ®½øÖÆÊı£º";
+			cout << "è¯·è¾“å…¥ä¸€ä¸ªåè¿›åˆ¶æ•°ï¼š";
 			cin >> num;
 			while (cin.fail())
 			{
 				while (getchar() != '\n')
 					continue;
 				cin.clear();
-				cout << "ÊäÈë´íÎó£¡ÇëÖØĞÂÊäÈë£º";
+				cout << "è¾“å…¥é”™è¯¯ï¼è¯·é‡æ–°è¾“å…¥ï¼š";
 				cin >> num;
 			}
 			if (num < 0)
@@ -129,12 +129,12 @@ int main()
 				putchar('-');
 				num = -num;
 			}
-			cout << "×ª»»³É¶ş½øÖÆÊıÎª£º";
+			cout << "è½¬æ¢æˆäºŒè¿›åˆ¶æ•°ä¸ºï¼š";
 			dec_to_bin(num);
 			break;
 		case 2:
-			cout << "ÇëÊäÈë¶ş½øÖÆÊı£º";
-			while (getchar() != '\n')					//ÍÌµô»»ĞĞ·û
+			cout << "è¯·è¾“å…¥äºŒè¿›åˆ¶æ•°ï¼š";
+			while (getchar() != '\n')					//åæ‰æ¢è¡Œç¬¦
 				continue;
 			bin_to_dec();
 			break;

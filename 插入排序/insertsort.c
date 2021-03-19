@@ -27,14 +27,14 @@ void direct_insert_sort(int a[], const int n, const short mode)
 }
 
 /*
- * Binary Search
- * param:
- * [i] a[] is the target array to search;
- * [i] n is the length of the array a[];
- * [i] data is the target element to search;
- * [i] mode is used to select the searching method of the array,
- *     0 is from small to large, the other numbers are the opposite.
- * return: index of data in the a[].
+ * @brief   Binary Search
+ * @param[in] a[]   The target array to search;
+ * @param[in] n     The length of the array a[];
+ * @param[in] data  The target element to search;
+ * @param[in] mode  Used to select the searching method of the array;
+ *               0: small to large;
+ *           not 0: large to small.
+ * @return          index of data in the a[].
  */
 int binary_search(int a[], const int n, const int data, const short mode)
 {

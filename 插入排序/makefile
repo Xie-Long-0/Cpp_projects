@@ -9,4 +9,4 @@ main: $(OBJ)
 
 .PHONY: clean
 clean:
-	rm -f main $(OBJ)
+	-rm -f main $(OBJ)

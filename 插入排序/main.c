@@ -11,7 +11,7 @@ void print_array(int a[], const int n)
     printf("\n");
 }
 
-int main(void)
+int main(int args, char *argv[])
 {
     int s[] = {5, 8, 2, 1, 3};
     int ns  = LENGTH(s);

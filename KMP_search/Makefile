@@ -1,7 +1,7 @@
 target	:= main.exe
 obj		:= main.o kmp.o
 
-GCC		:= gcc
+GCC		:= g++
 G++ 	:= g++
 CFLAGS	:= -g -Wall
 

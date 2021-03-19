@@ -23,7 +23,12 @@ int main(int args, char *argv[])
 		strSub = argv[2];
 	}
 
+// #ifdef __cplusplus
+// 	result = kmp_search(std::string(strSrc), std::string(strSub));
+// #else
 	result = kmp_search(strSrc, strSub);
+// #endif
+
 	if (result < 0)
 	{
 		printf("找不到字符串'%s' \r\n", strSub);
@@ -34,9 +39,10 @@ int main(int args, char *argv[])
 		int len = strlen(strSub);
 		printf("%s\r\n", strSrc);
 		for (int i = 0; i < result; i++)
+			printf(" ");
+		printf("^");
+		for (int i = 1; i < len; i++)
 			printf("~");
-		for (int i = 0; i < len; i++)
-			printf("^");
 		printf("\r\n");
 	}
 

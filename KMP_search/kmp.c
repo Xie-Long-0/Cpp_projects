@@ -2,7 +2,7 @@
 #include <string.h>
 
 #ifdef __cplusplus
-#include <string>
+#include <iostream>
 using std::string;
 #endif // !__cplusplus
 
@@ -29,7 +29,6 @@ int GetNext(const char sub[], int next[], int nlen)
 	return k;
 }
 
-// KMP搜索字符串
 int kmp_search(const char strSrc[], const char strSub[])
 {
 	int srcLen = strlen(strSrc);			//源字符串长度
@@ -68,6 +67,7 @@ int kmp_search(const char strSrc[], const char strSub[])
 #ifdef __cplusplus
 int kmp_search(const string &strSrc, const string &strSub)
 {
+	// std::cout << "[Info] Compiled in C++" << std::endl;
 	return kmp_search(strSrc.c_str(), strSub.c_str());
 }
 #endif

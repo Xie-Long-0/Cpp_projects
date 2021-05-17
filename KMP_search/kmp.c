@@ -55,7 +55,6 @@ int kmp_search(const char strSrc[], const char strSub[])
 			else
 			{
 				current += subPos - next[subPos - 1];	//字符不匹配则后移
-				//cout << subpos;
 				subPos = 0;
 				break;
 			}

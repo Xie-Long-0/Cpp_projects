@@ -1,42 +1,53 @@
+/**
+ * 分解质因数 - 将一个正整数分解成若干个质因数相乘
+*/
+
 #include <stdio.h>
-#include <string.h>
 #include <stdlib.h>
 
 int main(int args, char *argv[])
 {
-    long long int i = 0, n = 0;
-    char ch[2048] = "\0";
+    printf("分解质因数 - 将一个正整数分解成若干个质因数相乘\r\n");
+    printf("Usage: %s [positive integer]\r\n\r\n", argv[0]);
+
+    long long i = 0,
+              num = 0;
+    char buf[2048] = "\0";
+
     if (args >= 2)
     {
-        n = atoll(argv[1]); //将字符串转换为长整数
+        num = atoll(argv[1]); //将字符串转换为长整数
     }
-    if (n <= 0)
+
+    if (num <= 0)
     {
         printf("请输入一个正整数：");
-        while (!scanf("%lld", &n) || n <= 0)
+        while (!scanf("%lld", &num) || num <= 0)
         {
-            gets(ch);   //用于清除输入缓冲
+            fgets(buf, 2000, stdin); //用于清除输入缓冲
             printf("输入错误！请输入一个正整数：");
         }
     }
 
-    if (n == 1)
+    if (num == 1)
     {
         printf("1没有质因数。\r\n");
     }
     else
     {
-        printf("%lld = ", n);
-        for (i = 2; i <= n; i++)
+        printf("%lld = ", num);
+        for (i = 2; i <= num; i++)
         {
-            if (n % i == 0)
+            if (num % i == 0)
             {
-                if (n == i)
+                if (num == i)
+                {
                     printf("%lld", i);
+                }
                 else
                 {
                     printf("%lld*", i);
-                    n /= i;
+                    num /= i;
                     i = 1;
                 }
             }

@@ -1,20 +1,31 @@
-/*  This is only suitable for positive interger number  */
+/***********************************
+ * Make a Integer number reverse.
+ * @author XieLong
+***********************************/
 
 #include <stdio.h>
 
 int main()
 {
-	printf("Input a number:");
-	int s;
-	scanf("%d", &s);
-	int t = s;
-	int r = 0;
-	int n = 0;
-	for (; t > 0; n++)
+	printf("Input a integer number:");
+	int src = 0;
+	scanf("%d", &src);
+	int negative = (src < 0) ? -1 : 1;
+	int tmp = src * negative;
+	int reverse = 0;
+	int digits = 0;
+
+	for (; tmp > 0;)
 	{
-		r = r*10 + t%10;
-		t /= 10;
+		reverse = reverse * 10 + tmp % 10;
+		tmp /= 10;
+		digits++;
 	}
-	printf("The original number is %d .\nIt is %d digits.\nIt's reversion is %d .\n", s, n, r);
+	reverse *= negative;
+
+	printf("The original number is %d .\n", src);
+	printf("It has %d digits.\n", digits);
+	printf("The reversed number is %d .\n", reverse);
 	return 0;
 }
+

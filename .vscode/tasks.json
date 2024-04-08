@@ -1,0 +1,64 @@
+{
+    "tasks": [
+        {
+            "type": "cppbuild",
+            "label": "MSVC 生成活动文件",
+            "command": "cl.exe",
+            "args": [
+                "/Zi",
+                "/W3",
+                "/EHsc",
+                "/nologo",
+                "/MDd",
+                "/Fo${fileDirname}\\${fileBasenameNoExtension}.obj",
+                "/Fe${workspaceFolder}\\bin_msvc_x64\\${fileBasenameNoExtension}.exe",
+                "${file}",
+                "/I${workspaceFolder}\\include",
+                "/TC",
+                "/utf-8",
+                "/link",
+                "/MACHINE:X64",
+                "/DEBUG",
+                "/LIBPATH:${workspaceFolder}\\lib_msvc_x64"
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": [
+                "$msCompile"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "detail": "MSVC编译器"
+        },
+        {
+            "type": "cppbuild",
+            "label": "GCC 生成活动文件",
+            "command": "gcc",
+            "args": [
+                "-fdiagnostics-color=always",
+                "-g",
+                "-Wall",
+                "${file}",
+                "-o",
+                "${workspaceFolder}\\bin_gcc_x64\\${fileBasenameNoExtension}.exe",
+                "-I${workspaceFolder}\\include",
+                "-L${workspaceFolder}\\lib_gcc_x64",
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "MinGW_GCC编译器"
+        }
+    ],
+    "version": "2.0.0"
+}

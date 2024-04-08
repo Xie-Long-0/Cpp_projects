@@ -3,6 +3,7 @@
 *.ko
 *.obj
 *.elf
+*.ilk
 
 # Precompiled Headers
 *.gch
@@ -29,6 +30,7 @@
 *.hex
 
 # Debug files
+*.pdb
 *.dSYM/
 *.su
-.vscode/*
+**/.vscode/

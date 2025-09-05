@@ -23,12 +23,12 @@
             "program": "${workspaceFolder}\\bin_gcc_x64\\${fileBasenameNoExtension}.exe",
             "args": [],
             "stopAtEntry": false,
-            "cwd": "${fileDirname}",
+            "cwd": "${workspaceFolder}\\bin_gcc_x64",
             "environment": [],
             "externalConsole": false,
             "MIMode": "gdb",
             // 修改本地GDB对应路径
-            "miDebuggerPath": "gdb",
+            "miDebuggerPath": "D:/Qt/Tools/mingw1310_64/bin/gdb.exe",
             "setupCommands": [
                 {
                     "description": "为 gdb 启用整齐打印",
